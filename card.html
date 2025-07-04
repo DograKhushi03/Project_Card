@@ -6,7 +6,6 @@
     <title>Simple Form with Card Display</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        /* Styling for the cards */
         .card-container {
             display: flex;
             flex-wrap: wrap;
@@ -55,7 +54,6 @@
             background-color: darkblue;
         }
 
-        /* Modal Styling */
         .modal {
             display: none;
             position: fixed;
@@ -97,7 +95,7 @@
 }
 
 .form-container form, .editModal {
-    width: 500px; /* Increase form width */
+    width: 500px; 
     border: 2px solid rgb(46, 133, 186);;
     padding: 20px;
     border-radius: 10px;
@@ -107,7 +105,6 @@
     
 }
 
-/* Make input fields and select full width */
 form input[type="text"],
 form select {
     width: 100%;
@@ -117,10 +114,10 @@ form select {
 }
 
 form input[type="submit"] {
-    width: 150px;       /* smaller width */
+    width: 150px;      
     padding: 10px;
-    margin: 10px auto;  /* top-bottom 10px, auto left-right to center */
-    display: block;     /* makes margin auto work for centering */
+    margin: 10px auto;  
+    display: block;     
     box-sizing: border-box;
     background-color: rgb(74, 155, 206);
     border-style: none;
@@ -140,14 +137,11 @@ form input[type="submit"]:hover {
 
     <h2>Employee Information Form</h2>
 
-    <!-- ✅ Form wrapped in a container for centering -->
     <div class="form-container">
         <form id="employeeForm">
-            <!-- Name Field -->
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
 
-            <!-- Department Dropdown -->
             <label for="department">Department:</label><br>
             <select id="department" name="department">
                 <option value="HR">HR</option>
@@ -156,23 +150,18 @@ form input[type="submit"]:hover {
                 <option value="Marketing">Marketing</option>
             </select><br><br>
 
-            <!-- Contact Field -->
             <label for="contact">Contact:</label><br>
             <input type="text" id="contact" name="contact" required><br><br>
 
-            <!-- Role Field -->
             <label for="role">Role:</label><br>
             <input type="text" id="role" name="role" required><br><br>
 
-            <!-- Image URL Input -->
             <label for="imageUrl">Image URL:</label><br>
             <input type="text" id="imageUrl" name="imageUrl"><br><br>
 
-            <!-- Status Checkbox -->
             <label for="status">Active:</label>
             <input type="checkbox" id="status" name="status" value="active"><br><br>
 
-            <!-- Submit Button -->
             <input type="submit" value="Submit">
         </form>
     </div>
@@ -182,7 +171,6 @@ form input[type="submit"]:hover {
         <!-- Employee cards will be populated here -->
     </div>
 <form>
-    <!-- Modal for Editing Employee Data -->
     <div id="editModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -192,7 +180,6 @@ form input[type="submit"]:hover {
                 <label for="editName">Name:</label><br>
                 <input type="text" id="editName" name="name" required><br><br>
 
-                <!-- Department Dropdown -->
                 <label for="editDepartment">Department:</label><br>
                 <select id="editDepartment" name="department">
                     <option value="HR">HR</option>
@@ -201,23 +188,18 @@ form input[type="submit"]:hover {
                     <option value="Marketing">Marketing</option>
                 </select><br><br>
 
-                <!-- Contact Field -->
                 <label for="editContact">Contact:</label><br>
                 <input type="text" id="editContact" name="contact" required><br><br>
 
-                <!-- Role Field -->
                 <label for="editRole">Role:</label><br>
                 <input type="text" id="editRole" name="role" required><br><br>
 
-                <!-- Image URL Input -->
                 <label for="editImageUrl">Image URL:</label><br>
                 <input type="text" id="editImageUrl" name="imageUrl"><br><br>
 
-                <!-- Status Checkbox -->
                 <label for="editStatus">Active:</label>
                 <input type="checkbox" id="editStatus" name="status" value="active"><br><br>
 
-                <!-- Save Button -->
                 <input type="submit" value="Save Changes">
             </form>
         </div>
@@ -225,7 +207,6 @@ form input[type="submit"]:hover {
     </form>
 
     <script>
-        // Retrieve employee data from localStorage (if available)
         let employeeData = JSON.parse(localStorage.getItem("employeeData")) || [];
         let editingIndex = null;
 
